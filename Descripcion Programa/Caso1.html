@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASO 1</title>
+</head>
+<body>
+    <style>
+        ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: rgb(15, 23, 124)139, 42, 42;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: rgb(14, 1, 9);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover {
+      background-color: rgb(120, 197, 241);
+    }
+        </style>
+    <body>
+        <div>
+            <h1>Lenguaje y Automatas ll</h1> 
+            <h3>Codigo Intermedio</h3> 
+            <div id="navigation">
+                <ul id="menu-bar">
+                    <li><a href="Caso1.html">CASO 1</a></li> 
+                    <li><a href="Caso2.html">CASO 2</a></li>
+                    <li><a href="Caso3.html">CASO 3</a></li>
+                    <li><a href="Caso4.html">CASO 4</a></li>
+                    <li><a href="Caso5.html">CASO 5</a></li>
+                   </ul>
+            
+            </div>
+    <div>
+        <p>CASO 1 <!-- ETIQUETA DE TTITULO  -->
+        </p>
+    </div>
+    <div>
+        
+        <button>X =</button><input type="text" name="Dato" id='t1'value= "9+5*Y"><br><br> <!-- CUADRO DE TEXTO DONDE SE PODRA ECRIBIR LA EXPRESION  -->
+        <button onclick= "Caso1()">generar codigo</button><br> <!-- BOTON QUE HACE QUE GENERE EL CODIGO  -->
+    
+    </div>
+    <div>
+        <h2>RESULTADO</h2><br> 
+        <textarea name="" id='c1' cols="20" rows="10"></textarea><!-- CUADRO DE TEXTO DONDE SE GENREA EL RESULTADO  -->
+    </div>  
+<script>      
+function Caso1() {
+    
+    var ecuacion = document.getElementById('t1').value;
+       if(ecuacion != null){ 
+           var expres = /[a-zA-Z0-9]{1,}(\d{1,}| |\[\d\]{1}|)( |)(\*|\/)( |)([a-zA-Z0-9]{1,}(\d{1,}| |\[\d\]{1}|))/gm; 
+           var suma = ecuacion.match(expres);
+           var i = 0;//VARIABLE CON VALOR DE 0
+           var t1 = 't';//VARIABLE QUE ES T
+           var r1 = t1 + i + '=' + suma;//VARIABLE 
+           var otro = ecuacion.replace(expres,t1+i);//REMPLAZA LO DE LA EXPRES Y T1 +I
+           i++;
+           var r2 = t1+i+'='+otro;
+      };
+    document.getElementById('c1').value = r1  +"\n"+r2;
+   
+}
+</script>
+</body>
+</html>
